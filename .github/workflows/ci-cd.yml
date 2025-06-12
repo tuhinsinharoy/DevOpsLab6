@@ -13,9 +13,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Simulate Build Step
         run: echo "Building the HTML project..."
-  
+
   test:
     runs-on: ubuntu-latest
     name: Test Stage
@@ -24,16 +25,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Simulate HTML Validation
         run: echo "Running HTML/CSS/JS validation..."
-  
+
   deploy:
-      runs-on: ubuntu-latest
-      name: Deploy Stage
-      needs: test
-   
+    runs-on: ubuntu-latest
+    name: Deploy Stage
+    needs: test
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
       - name: Simulate Deployment
         run: echo "Deploying the website (simulated for now)..."
